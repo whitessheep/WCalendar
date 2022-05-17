@@ -17,3 +17,9 @@
 - 执行`sh start.sh`启动
 - 访问`http://localhost:7888`
 - 初始账户admin 密码均为123
+
+### 操作
+./start.sh   启动服务器
+./reload.sh  热更代码
+./stop.sh    停止服务器
+./log.sh 	 查看滚动日志（error）
