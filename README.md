@@ -19,6 +19,12 @@
 - 访问`http://localhost:7888`
 - 初始账户admin 密码均为123
 
+### 开发环境
+
+- 操作系统：系统在 Centos7 以及 Ubuntu20.4 都经过部署测试
+- 开发工具：vscode
+- 数据库： Mysql
+
 ### 自定义配置
 
 - 系统的自定义配置路径在(app/config/config.lua), 里面有详细的注释
