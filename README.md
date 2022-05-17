@@ -31,7 +31,7 @@
 
 ### 操作
 
-- ./start.sh   启动服务器
-- ./reload.sh  热更代码
-- ./stop.sh    停止服务器
-- ./log.sh 	 查看滚动日志（error）
+- ./start.sh   	启动服务器
+- ./reload.sh  	热更代码
+- ./stop.sh    	停止服务器
+- ./log.sh 	 	查看滚动日志（error）
