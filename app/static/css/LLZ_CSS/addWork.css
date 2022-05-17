@@ -1,0 +1,21 @@
+body {
+	/*body的背景色*/
+	background: rgb(244,244,244);
+}
+
+#nav {
+	/*nav的背景色*/
+	background:rgb(39,39,39);
+	height: 45px;
+	margin-bottom: 30px;
+}
+#nav h4{
+	/*nav标题的颜色*/
+	color: white;
+}
+.navfixed{
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	z-index: 1;
+}

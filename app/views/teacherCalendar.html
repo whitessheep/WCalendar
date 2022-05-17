@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WCalendar | 教学日历管理与服务平台</title>
+    {(meta.html)}
+</head>
+<style>
+	table{
+		/* width: 500px; */
+		text-align: center;
+		/* 表边框合并  两个单元格之间的边框进行合并 */
+		border-collapse: collapse;
+		margin: 0 auto;
+	}
+	
+	table td, th{
+		border:1px black solid;
+		/* background-color: white; */
+		height: 40px;
+		width: 100px;
+	}
+    
+</style>
+<style type="text/css">
+    @media print {
+      .noprint{
+        display: none;
+      }
+    }
+  </style>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        {(header.html)}
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!----------------------------------------------- 正文 ----------------------------------------------->
+            <!-- <div id="main" class="main-container container"> -->
+                <section class="content-header">
+                    <h1>
+                          预览
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+                        <li><a href="#">预览</a></li>
+                    </ol>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <!--startprint-->
+                    <div class="container" id = 'dd'>
+                        <div class="row clearfix">
+                            <!--nav-->
+                            <div class="col-md-12 col-xs-12 column" id="nav">
+                                <h4 class="text-center">佛山科学技术学院本科教学日历</h4>
+                            </div>
+                            <div class="col-md-1 col-xs-1 column">
+                            </div>
+                            
+                            <div class="col-md-10 col-xs-10 column" id="calendar">
+                                <div class="row clearfix">
+                                    <div class="col-md-12 col-xs-12 column">
+                                        <form role="form">
+                                            <!--选择时间-->
+                                            <div class="row">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <br>
+                                                    <table>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;" rowspan="1" colspan="1">
+                                                                授课教师
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="1">
+                                                                {{teacher.teachername}}
+                                                            </td>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px; border-bottom:0px solid black;" rowspan="1" colspan="1">
+                                                                职称
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="1">
+                                                                {{teacher.position}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;" rowspan="1" colspan="1">
+                                                                授课专业班级
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="3">
+                                                                {{lessonplan.classname}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;" rowspan="1" colspan="1">
+                                                                课程名称
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="3">
+                                                                {{lessonplan.coursename}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;" rowspan="1" colspan="1">
+                                                                教师大纲
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="3">
+                                                                {{lessonplan.syllabus}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;" rowspan="1" colspan="1">
+                                                                采用教材
+                                                            </td>
+                                                            <td valign="center" style=" border-width: 0px; border-style: solid; height:20px;border-bottom:1px solid black;" rowspan="1" colspan="3">
+                                                                {{lessonplan.textbook}}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <p align="center">{{lessonplan.semester}}</p>
+                                                    <table border="1" >
+                                                        <tbody>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid; height:20px; " rowspan="1" colspan="1">
+                                                                周数
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.total_week}}
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                讲课学时
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.lecture_period}}
+                                                            </td>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                课堂讨论学时
+                                                            </td>
+                                                            <td valign="center" style="border-width:0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.disscussion_period}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                实验课学时
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.experiment_period}}
+                                                            </td>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                习题课学时
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.exercise_period}}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                其他环节学时
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.other_period}}
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="center" style="word-break: break-all; border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1">
+                                                                总计
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;text-decoration:underline;" rowspan="1" colspan="1">
+                                                                {{lessonplan.total}}
+                                                            </td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+                                                            <td valign="center" style="border-width: 0px; border-style: solid;height: 20px;" rowspan="1" colspan="1"></td>
+                                                        </tr>
+                                                        </tbody></table>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--<div style="width:auto; height:400px; overflow:scroll;">table滚动条-->
+                                <table >
+                                         <thead >
+                                        <tr>
+                                            <td valign="center"  rowspan="2" colspan="1" style="width: 150px;;">
+                                                周次日期
+                                            </td>
+                                            <td valign="center" rowspan="2" colspan="1"  >
+                                                周学时
+                                            </td>
+                                            <td valign="center" rowspan="1" colspan="5" >
+                                                其中
+                                            </td>
+                                            <td valign="center" rowspan="2" colspan="1" style="width: 1500px;">教学内容摘要</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="center" rowspan="1" colspan="1">讲课</td>
+                                            <td valign="center" rowspan="1" colspan="1">实验课</td>
+                                            <td valign="center" rowspan="1" colspan="1">习题课</td>
+                                            <td valign="center" rowspan="1" colspan="1">课堂讨论</td>
+                                            <td valign="center" rowspan="1" colspan="1">其他环节</td>
+                                        </tr>
+                                          </thead>
+                                        <tbody id="calendarBody">
+                                    </tbody>
+                                </table>
+                                <br>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;">
+                                                分管教学系（部）主任签名：
+                                            </td style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;">
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;">
+                                                ________________
+                                            </td>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;">
+                                                分管教学院长签名：
+                                            </td>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; height:20px;">
+                                                ________________
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; width:200px;"></td>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; width:200px;">年 月 日</td>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; width:200px;"></td>
+                                            <td style="word-break: break-all;  border-width: 0px; border-style: solid; width:200px;">年 月 日</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- <div><span>分管教学系（部）主任签名：</span><span>________</span><span>分管教学院长签名：</span><span>________</span></div>
+                                <div><span></span><span>年 月 日</span><span>年 月 日</span><span></span></div> -->
+                                <br>
+                                <p>说明：１、本教学日历由主讲教师负责填写，于每学期开学第一周内送交教师所在系（部）主任审定、签字后备查。</p>
+                                <p>&emsp;&emsp;&emsp;２、此表一式二份，其中，任课教师留一份，教师所在系（室）留一份。</p>
+                                <div class="text-right">
+                                    <button class="btn btn-large btn-info noprint" type="button" onclick="doPrint()" >打印</button>
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-md-1 col-xs-1 column"></div>
+                        </div>
+                    </div>
+                    <!--endprint-->
+                </section>
+            <!-- </div> -->
+            <!----------------------------------------------- 正文结束 ----------------------------------------------->
+        </div>
+        <!-- /.content-wrapper -->
+        <!--  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+ -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Allow mail redirect
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Other sets of options are available
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Expose author name in posts
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Allow the user to show his name in blog posts
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Show me as online
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Turn off notifications
+                                <input type="checkbox" class="pull-right">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <script id="schedule-tpl" type="text/template">
+        {@each schedule as s}
+        <tr>
+            <td >第一周3月8日至3月14日</td>
+            <td >${t.week}</td>
+            <td >${t.lecture_period}</td>
+            <td>${t.experiment_period}</td>
+            <td >${t.exercise_period}</td>
+            <td >${t.disscussion_period}</td>
+            <td  >${t.other_period}</td>
+            
+            <td  >${t.content}
+                </td>
+        </tr>
+        {@/each}
+    </script>
+
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <script src="/static/js/ZCY_JS/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/static/js/ZCY_JS/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="/static/js/ZCY_JS/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/static/js/ZCY_JS/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/static/js/ZCY_JS/demo.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/jquery.ui.widget.js"></script>
+    <script src="/static/js/jquery.fileupload.js"></script>
+    <script src="/static/js/jquery.iframe-transport.js"></script>
+    <script src="/static/js/settings.js"></script>
+    <script language="javascript" src="/static/js/jquery.jqprint-0.3.js"></script>
+    <script src="/static/js/jquery-migrate-1.1.0.js"></script>
+    <script type="text/javascript">
+        var chinese = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一','二十一','二十二','二十三','二十四','二十五','二十六', '二十七', '二十八', '二十九', '三十']
+        function toChinesNum(num) {
+        let changeNum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一','二十一','二十二','二十三','二十四','二十五','二十六', '二十七', '二十八', '二十九', '三十']
+        let unit = ['', '十', '百', '千', '万']
+        num = parseInt(num)
+        let getWan = (temp) => {
+            let strArr = temp.toString().split('').reverse()
+            let newNum = ''
+            let newArr = []
+            strArr.forEach((item, index) => {
+            newArr.unshift(item === '0' ? changeNum[item] : changeNum[item] + unit[index])
+            })
+            let numArr = []
+            newArr.forEach((m, n) => {
+            if (m !== '零') numArr.push(n)
+            })
+            if (newArr.length > 1) {
+            newArr.forEach((m, n) => {
+                if (newArr[newArr.length - 1] === '零') {
+                if (n <= numArr[numArr.length - 1]) {
+                    newNum += m
+                }
+                } else {
+                newNum += m
+                }
+            })
+            } else {
+            newNum = newArr[0]
+            }
+    
+            return newNum
+        }
+        let overWan = Math.floor(num / 10000)
+        let noWan = num % 10000
+        if (noWan.toString().length < 4) {
+            noWan = '0' + noWan
+        }
+        return overWan ? getWan(overWan) + '万' + getWan(noWan) : getWan(num)
+        };
+        
+        $(document).ready(function(){
+            // var body=$("#calendarBody");
+            // body.empty();
+
+            // var tpl = $("#schedule-tpl").html();
+            // var html = juicer(tpl, data);
+            // body.html(html);
+
+            $.ajax({
+                    url : '/schedule/get',
+                    data:{
+                        lessonplan_id: "{{lessonplan.id}}"
+                    },
+                    type : 'get',
+                    cache: false,
+                    dataType : 'json',
+                    success : function(result) {
+                        if(result.success){
+                            console.log("==================================success")
+                            if(!result.data){
+                                // $("#topics-body").html('<div class="alert alert-info" role="alert">此分类下没有任何内容</div>');
+                            }else{
+                                var start = true
+                                $.each(result.data.schedule, function(index,item) {
+                                    console.log("==================================", index)
+                                    var cnWeek = '第' +(chinese[item.week] ? chinese[item.week] : item.week) + '周\n' + item.startTime + '\n至\n' + item.endTime
+                                    var total_period = item.lecture_period + item.exercise_period + item.disscussion_period + item.other_period +item.experiment_period
+                                    if (total_period != 0 || (!start) ) 
+                                    {
+                                        $('#calendarBody').append('<tr><td style="white-space: pre-wrap;">' + cnWeek + '</td><td>'+total_period+'</td><td>'+item.lecture_period+'</td><td>'+item.experiment_period+'</td><td>'+item.exercise_period+'</td><td>'+item.disscussion_period+'</td><td>'+item.other_period+'</td><td style="white-space: pre-wrap;" align="left">'+item.content+'</td>')
+                                        start = false
+                                    }
+                                    
+                                })
+                                // var remark = "1、课程使用教材\n"
+                                $('#calendarBody').append('<tr><td>备注</td><td colspan="7" style="white-space: pre-wrap;" align="left">'+result.data.remark+'</td>')
+                                console.log("=================sssssss");
+                            }
+                        }else{
+                            $("#topics-body").html('<div class="alert alert-info" role="alert">'+result.msg+'</div>');
+                        }
+                    },
+                    // error : function() {
+                    //     $("#topics-body").html('<div class="alert alert-info" role="alert">error to send request.</div>');
+                    // }
+                });
+            
+        });
+    </script>
+    <script>
+    //    $(document).ready(function() {
+    //        console.log($(".form").serialize()); // FirstName=Bill&LastName=Gates
+    //    });
+    function doPrint() {   
+        bdhtml=window.document.body.innerHTML;   
+        sprnstr="<!--startprint-->";   
+        eprnstr="<!--endprint-->";   
+        prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);   
+        prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));   
+        window.document.body.innerHTML=prnhtml;  
+        window.print();   
+    }
+    // function printCalendar() {
+    //     $("#dd").jqprint({
+    //         debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+    //         importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+    //         printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+    //         operaSupport: true//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+    //     });
+
+    // }
+</script>
+</body>
+
+</html>

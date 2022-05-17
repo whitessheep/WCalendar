@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(244,244,244);
+}
+.content_left{
+    position:absolute;
+    font-size: 20px;left:170px;
+}
+.content_left_text{
+    position: relative;
+    top:-8px;
+}
+.content_left_img{
+    position:relative;
+    left:160px;
+    z-index: -999;
+    bottom: 419px;
+}
+.content_right{
+    font-size: 16px;line-height: 30px;color:white;background-color: rgb(68,78,73);margin-left:56%;
+    margin-top:10%;width:400px; height:400px;opacity: 0.8;border:1px solid black;border-radius: 10px;position:relative;
+}
+.content_right_header{
+    font-size: 23px;position: absolute;left:43px;top:15px;
+}
+.content_right_header_text{
+    text-decoration: none;cursor: pointer;color:white;
+}
+.content_right_hr{
+    width:400px;height:1px;border:none;border-top:1px solid black;position: absolute; top:38px;
+}
+.content_right_quick{
+    margin-top:24%;margin-left: 22%;display: none;
+}
+.content_right_quick_img{
+    width:175px;height: 175px;margin-left:28px;margin-top: 18px;
+}
+.content_right_slow{
+    margin-top:20%;margin-left: 5%;display: block;
+}
+.content_right_identity{
+    margin-top: 15px;width:400px;
+}
+.content_right_logintip{
+    color:red;position:absolute;
+}
+.content_right_login{
+    background-color:rgb(40,40,40);border-radius: 5px;width:337px;position:relative;top:47px;
+}
+.content_right_tip{
+    position:relative;top:100px;left: 193px;width: 300px;
+}
+.content_right_tip_text{
+    text-decoration: none;cursor: pointer;color:white;
+}

@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(244,244,244);
+}
+.main{
+    font-size: 16px;line-height: 30px;color:white;background-color: rgb(68,78,73);margin-left:38%;
+    margin-top:10%;width:400px; height:270px;opacity: 0.8;border:1px solid black;border-radius: 10px;position:relative;
+}
+.main_header{
+    text-align: center;font-size: 20px;margin-top:7%;
+}
+.main_input{
+    margin-top:7%;margin-left: 9%;display: block;
+}
+.main_send{
+    position: absolute;left:226px;height:40px;bottom:-3px;width:75px;background-color:rgb(40,40,40);
+}
+.main_submit{
+    color:white;background-color:rgb(40,40,40);border-radius: 5px;width:300px;position:relative;top:25px;
+}
+.main_sure{
+    color:white;background-color:rgb(40,40,40);border-radius: 5px;width:250px;position:relative;top:25px;
+}

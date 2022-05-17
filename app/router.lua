@@ -1,0 +1,41 @@
+local common_router = require("app.routes.common")
+local auth_router = require("app.routes.auth")
+local user_router = require("app.routes.user")
+local upload_router = require("app.routes.upload")
+local notification_router = require("app.routes.notification")
+local error_router = require("app.routes.error")
+local course_router = require("app.routes.course")
+local teacher_router = require("app.routes.teacher")
+local lessonplan_router = require("app.routes.lessonplan")
+local schedule_router = require("app.routes.schedule")
+local approval_router = require("app.routes.approval")
+local calendar_router = require("app.routes.calendar")
+local try_router = require("app.routes.try")
+
+return function(app)
+    app:use("/auth", auth_router())
+    app:use("/error", error_router())
+    app:use("/user", user_router())
+    app:use("/teacher", teacher_router())
+    
+    app:use("/notification", notification_router())
+    app:use("/upload", upload_router())
+    app:use("/course", course_router())
+    app:use("/lessonplan", lessonplan_router())
+    app:use("/schedule", schedule_router())
+    app:use("/approval", approval_router())
+    app:use("/calendar", calendar_router())
+    app:use("/try", try_router())
+    app:get("/", common_router.index)
+    app:get("/index", common_router.index)
+    app:get("/try", common_router.try)
+    -- app:get("/share", common_router.share)
+    -- app:get("/ask", common_router.ask)
+    -- app:get("/settings", common_router.settings)
+    -- app:get("/about", common_router.about)
+    -- app:get("/calendar", common_router.calendar)
+    
+
+
+end
+

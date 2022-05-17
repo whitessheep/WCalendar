@@ -1,0 +1,110 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>LoginIn &raquo; WCalendar</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    {(meta.html)}
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1>WCalendar</h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree">
+                        <h2>Log In</h2>
+                        <div>
+                            <input type="text" class="text" name="username" placeholder="User Name" required="" autofocus id="user_login">
+                            <input type="password" class="password" name="password" placeholder="User Password" required="" autofocus id="user_password">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- <label for="name">学院</label>
+                                    <select class="form-control">
+                                        <option value="">请选择</option>
+                                    </select> -->
+                                    <button class="btn" type="submit" id="login-btn">Log In</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <label for="name">专业</label>
+                                    <select class="form-control">
+                                    </select> -->
+                                    <button class="btn" type="submit" onclick='window.location.href="/try"'>Try</button>
+                                </div>
+                            </div>
+                            <!-- <button class="btn" type="submit" id="login-btn">Log In</button>
+                            <button class="btn" type="submit" onclick='window.location.href="/try"'>Log In</button> -->
+                            </div>
+                        
+                        <p class="account">Don't have an account? Please contact the staff to apply for an account</a></p>
+                    </div>
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <img src="/static/avatar/1.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">© 2022 WCalendar. All rights reserved | Design by WengFengWen</a></p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+    
+<script type="text/javascript">
+    $(document).ready(function(){
+        // 是当文档载入完成的时候执行的，也就是说文档载入完成后，执行：
+        $("#login-btn").click(function(){
+            var username =$("input[name=username]").val();
+            var password = $("input[name=password]").val();
+            $.ajax({
+                url : '/auth/login',
+                type : 'post',
+                data : {
+                    username: username,
+                    password: hex_md5(password + APP.pwd_secret)
+                },
+                dataType : 'json',
+                success : function(result) {
+                    if(result.success){
+                        window.location.href="/index";
+                    }else{
+                        alert(result.msg);
+                    }
+                },
+                error : function() {
+                    alert("登录请求出错!");
+                }
+            });
+        })
+    });
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格</title>
+
+<style>
+	table{
+		width: 950px;
+		text-align: center;
+		/* 表边框合并  两个单元格之间的边框进行合并 */
+		border-collapse: collapse;
+		margin: 0 auto;
+	}
+	
+	table td, th{
+		border:1px black solid;
+		background-color: white;
+		height: 40px;
+		width: 100px;
+	}
+</style>
+
+</head>
+<body>
+
+<table>
+	<caption><h2>费&nbsp;&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;&nbsp;&nbsp;报&nbsp;&nbsp;&nbsp;&nbsp;销&nbsp;&nbsp;&nbsp;&nbsp;单</h2></caption>
+	<tbody>
+		<!-- <tr style="height:40px;">
+			<td valign="center" rowspan="1" colspan="4" style="text-align:left;border:none;">
+				报销部门：
+			</td>
+			<td valign="center" rowspan="1" colspan="4" style="text-align:center;border:none;">
+				_______年_______月_______日填
+			</td>
+			<td valign="center" rowspan="1" colspan="4" style="text-align:right;border:none;">
+				单据及附件共________页<br/>
+			</td>
+		</tr> -->
+		<tr>
+			<td valign="center" style="word-break: break-all; border-width: 1px; border-style: solid;" rowspan="3" colspan="4">
+				周次日期
+			</td>
+			<td valign="center" rowspan="3" colspan="1" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				周学时
+			</td>
+			<td width="63" valign="center" rowspan="1" colspan="5" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				其中
+			</td>
+			<td valign="center" rowspan="3" colspan="10" style="border-width: 1px; border-style: solid;"></td>
+		</tr>
+		<tr>
+			<td valign="center" rowspan="2" colspan="1" style="border-width: 1px; border-style: solid;">讲课</td>
+			<td valign="center" rowspan="2" colspan="1" style="border-width: 1px; border-style: solid;">实验课</td>
+			<td valign="center" rowspan="2" colspan="1" style="border-width: 1px; border-style: solid;">习题课</td>
+			<td valign="center" rowspan="2" colspan="1" style="border-width: 1px; border-style: solid;">课堂讨论</td>
+			<td valign="center" rowspan="2" colspan="1" style="border-width: 1px; border-style: solid;">其他环节</td>
+		</tr>
+
+        <tr></tr>
+        <tr>
+			<td valign="center" rowspan="4" colspan="4" style="border-width: 1px; border-style: solid;">1</td>
+			<td valign="center" rowspan="4" colspan="2" style="border-width: 1px; border-style: solid;">2</td>
+			<td valign="center" rowspan="4" colspan="1" style="border-width: 1px; border-style: solid;">3</td>
+			<td valign="center" rowspan="4" colspan="1" style="border-width: 1px; border-style: solid;">4</td>
+			<td valign="center" rowspan="4" colspan="1" style="border-width: 1px; border-style: solid;">5</td>
+			<td valign="center" rowspan="4" colspan="1" style="border-width: 1px; border-style: solid;">6</td>
+			<td valign="center" rowspan="4" colspan="1" style="border-width: 1px; border-style: solid;">7</td>
+			<td valign="center" rowspan="4" colspan="10" style="border-width: 1px; border-style: solid;">8</td>
+		</tr>
+		<tr>
+			<td valign="center" rowspan="1" colspan="4" style="border-width: 1px; border-style: solid;"></td>
+			<td valign="center" rowspan="1" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+			<td width="63" valign="center" rowspan="4" colspan="1" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				部门审核<br/>
+			</td>
+			<td valign="center" rowspan="4" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+			<td width="63" valign="center" rowspan="4" colspan="1" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				领导审核<br/>
+			</td>
+			<td valign="center" rowspan="4" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+		</tr>
+		<!-- <tr>
+			<td valign="center" rowspan="1" colspan="4" style="border-width: 1px; border-style: solid;"></td>
+			<td valign="center" rowspan="1" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+		</tr>
+		<tr>
+			<td valign="center" rowspan="1" colspan="4" style="border-width: 1px; border-style: solid;"></td>
+			<td valign="center" rowspan="1" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+		</tr>
+		<tr>
+			<td valign="center" rowspan="1" colspan="4" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				合&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;计
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="border-width: 1px; border-style: solid;"></td>
+		</tr>
+		<tr>
+			<td valign="center" rowspan="1" colspan="6" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				金额大写：&nbsp; &nbsp; &nbsp;拾&nbsp; &nbsp; &nbsp;万&nbsp; &nbsp; &nbsp;仟&nbsp; &nbsp; &nbsp;佰&nbsp; &nbsp; &nbsp;拾&nbsp; &nbsp; &nbsp;元&nbsp; &nbsp; &nbsp;角&nbsp; &nbsp; &nbsp;分
+			</td>
+			<td valign="center" rowspan="1" colspan="3" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				原借款：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 元
+			</td>
+			<td valign="center" rowspan="1" colspan="3" style="word-break: break-all; border-width: 1px; border-style: solid;">
+				应退余额：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;元<br/>
+			</td>
+		</tr> -->
+		<!-- <tr>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				会计主管
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				复核
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				会计
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				出纳
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				报销人
+			</td>
+			<td valign="center" rowspan="1" colspan="2" style="text-align:left;border:none;">
+				领款人
+			</td>
+		</tr> -->
+	</tbody>
+</table>
+</body>
+</html>

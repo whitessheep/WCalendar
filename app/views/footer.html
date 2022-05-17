@@ -1,0 +1,36 @@
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="media">
+     
+            <div class="media-body">
+                <div class="links"> <a href="/about">关于</a> / <a href="https://github.com/whitessheep" target="_blank" rel="nofollow" title="本站在 GitHub 上面的开源内容">GitHub</a>
+ 
+                </div>
+                <div class="copyright">W BLOG 由WhiteSheep创立， 仅用于学习交流</div>
+                <div class="copyright">在本论坛发布的所有软件、程序(包括软件源程序、解密文件、注册号等)均来自互联网；本论坛发布的所有资料、所有软件仅供个人学习、研究之用，绝不用于任何商业用途，请下载后自觉在6小时内自行删除。如违反，由此引起的一切后果均由其本人承担，本论坛及本人不承担任何责任或相关、连带责任！如果论坛和会员的言论或行为如侵犯了版权人的版权，请及时与我们管理员联系,我们将及时对论坛或会员的言论或行为加以改正！</div>
+            </div>
+            <div class="media-right" style="width:200px; text-align:right;">
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+{%
+    if locals and locals.login and locals.login == true then
+%}
+
+<div id="response-time-area"></div>
+<script type="text/javascript">
+    APP.Common.findUnreadMsg();
+
+    // $(document).ajaxComplete(function( event, xhr, settings ) {
+    //     var show_id = 'response-time-show-' + $.now();
+        
+    //     $("#response-time-area").append('<p id="'+ show_id +'">'+ xhr.getResponseHeader('X-Response-Time')+"</p>");
+    //     $("#" + show_id).fadeOut(3000,function(){
+    //         $(this).remove();
+    //     });
+    // });
+</script>
+{% end %}

@@ -1,0 +1,506 @@
+{% if user.is_admin == 1 then %}
+<header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>WCalendar</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>WCalendar</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                <!-- <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="label label-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">你有四条未读消息</li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user2-160x160.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            李四
+                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                        </h4>
+                                        <p>周三数据结构课程无法添加？</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user3-128x128.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            周影
+                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                        </h4>
+                                        <p>事务管理需要统一更新</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user4-128x128.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            林林
+                                            <small><i class="fa fa-clock-o"></i> Today</small>
+                                        </h4>
+                                        <p>请帮忙修改密码</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">查看所有消息</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown tasks-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag-o"></i>
+                        <span class="label label-danger">9</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">你还有9项未完成工作</li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            更新周三下午事务
+                                            <small class="pull-right">20%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">20% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            修改国庆补课时间
+                                            <small class="pull-right">40%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" style="width: 40%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">40% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            更新信息学院软件专业学生名单
+                                            <small class="pull-right">60%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" style="width: 60%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">60% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <a href="#">查看所有待办事项</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/static/avatar/{{user.avatar}}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{user.teachername}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="/static/avatar/{{user.avatar}}" class="img-circle" alt="User Image">
+                            <p>
+                                {{user.teachername}}
+                                <small>{{user.position}}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <a href="/auth/logout" class="btn btn-default btn-flat">退出</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="/static/avatar/{{user.avatar}}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{{user.teachername}}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> {% if user.is_admin==1 then %} 管理员 {% else %}教师{%
+                    end %} </a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="搜索...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                            class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">主菜单</li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>个人信息</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/"><i class="fa fa-circle-o"></i>查看个人信息</a></li>
+                    <li><a href="/user/settings"><i class="fa fa-circle-o"></i>修改个人信息</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>课程管理</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/course/view"><i class="fa fa-circle-o"></i>课程信息</a></li>
+                    <li><a href="/course/add"><i class="fa fa-circle-o"></i>添加课程</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>授课安排</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/lessonplan/view"><i class="fa fa-circle-o"></i>授课信息</a></li>
+                    <li><a href="/lessonplan/add"><i class="fa fa-circle-o"></i>新增授课安排</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>教师管理</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/teacher/viewTeacher"><i class="fa fa-circle-o"></i>教师信息</a></li>
+                    <li><a href="/teacher/addTeacher"><i class="fa fa-circle-o"></i>添加教师</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>审批</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/approval/view"><i class="fa fa-circle-o"></i>教学日历</a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="/calendar/">
+                    <i class="fa fa-calendar"></i> <span>查看校历</span>
+                </a>
+            </li>
+            <!-- <li>
+  <a href="mailbox/mailbox.html">
+    <i class="fa fa-envelope"></i> <span>Mailbox</span>
+    <span class="pull-right-container">
+      <small class="label pull-right bg-yellow">12</small>
+      <small class="label pull-right bg-green">16</small>
+      <small class="label pull-right bg-red">5</small>
+    </span>
+  </a>
+</li> -->
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+{% else %}
+<header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>WCalendar</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>WCalendar</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                <!-- <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="label label-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">你有四条未读消息</li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user2-160x160.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            李四
+                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                        </h4>
+                                        <p>周三数据结构课程无法添加？</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user3-128x128.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            周影
+                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                        </h4>
+                                        <p>事务管理需要统一更新</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="/static/avatar/ZCY_IMG/user4-128x128.jpg" class="img-circle"
+                                                alt="User Image">
+                                        </div>
+                                        <h4>
+                                            林林
+                                            <small><i class="fa fa-clock-o"></i> Today</small>
+                                        </h4>
+                                        <p>请帮忙修改密码</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">查看所有消息</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown tasks-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag-o"></i>
+                        <span class="label label-danger">9</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">你还有9项未完成工作</li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            更新周三下午事务
+                                            <small class="pull-right">20%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">20% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            修改国庆补课时间
+                                            <small class="pull-right">40%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" style="width: 40%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">40% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            更新信息学院软件专业学生名单
+                                            <small class="pull-right">60%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" style="width: 60%"
+                                                role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="100">
+                                                <span class="sr-only">60% 已完成</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <a href="#">查看所有待办事项</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/static/avatar/{{user.avatar}}" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{user.teachername}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="/static/avatar/{{user.avatar}}" class="img-circle" alt="User Image">
+                            <p>
+                                {{user.teachername}}
+                                <small>{{user.position}}</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <a href="/auth/logout" class="btn btn-default btn-flat">退出</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="/static/avatar/{{user.avatar}}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{{user.teachername}}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> {% if user.is_admin==1 then %} 管理员 {% else %}教师{%
+                    end %}</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="搜索...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                            class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">主菜单</li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>个人信息</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/"><i class="fa fa-circle-o"></i>查看个人信息</a></li>
+                    <li><a href="/user/settings"><i class="fa fa-circle-o"></i>修改个人信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/lessonplan/viewmy">
+                    <i class="fa fa-edit"></i> <span>授课安排</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>办公</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/lessonplan/my"><i class="fa fa-circle-o"></i>教学日历</a></li>
+                    <!-- li><a href="/lessonplan/fillLessonplan"><i class="fa fa-circle-o"></i>填写教学日历</a></li> -->
+                </ul>
+            </li>
+            <!-- <li>
+  <a href="mailbox/mailbox.html">
+    <i class="fa fa-envelope"></i> <span>Mailbox</span>
+    <span class="pull-right-container">
+      <small class="label pull-right bg-yellow">12</small>
+      <small class="label pull-right bg-green">16</small>
+      <small class="label pull-right bg-red">5</small>
+    </span>
+  </a>
+</li> -->
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+{% end %}
